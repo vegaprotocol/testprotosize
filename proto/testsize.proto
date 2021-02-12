@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package proto;
+option go_package = "github.com/vegaprotocol/testprotosize/proto";
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+message ThingWithSize {
+  uint64 size = 1 [(validator.field) = {int_gt: 0}];
+}
